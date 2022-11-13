@@ -22,7 +22,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading-color: #fff;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
-  --r-heading-text-transform: uppercase;
+  --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: 600;
   --r-heading1-text-shadow: none;
@@ -282,7 +282,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal small {
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 0.3em;
   line-height: 1.2em;
   vertical-align: top;
 }
@@ -354,4 +354,68 @@ section.has-light-background, section.has-light-background h1, section.has-light
   .backgrounds {
     background-color: var(--r-background-color);
   }
+}
+small {
+  font-size: 0.3em;
+}
+
+p.small, li.small, span.small {
+  font-size: 0.5em;
+}
+
+svg.rainbow {
+  background: black;
+}
+
+#cover1 {
+  animation: reveal1 2s linear;
+}
+
+#cover2 {
+  animation: reveal2 2s linear forwards;
+  animation-delay: 2s;
+}
+
+@keyframes reveal1 {
+  0% {
+    stroke-dashoffset: 80;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes reveal2 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -80;
+  }
+}
+.cs-box-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 500px;
+  background-color: #121212;
+  margin: auto;
+  padding: 0;
+}
+
+.cs-box-inner {
+  position: absolute;
+  background-color: #7c7c7c;
+  width: 900px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye-fixation {
+  width: 45px;
+  height: 45px;
+  background-color: blue;
+  border-radius: 30px;
 }
