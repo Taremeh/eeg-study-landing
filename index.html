@@ -2,23 +2,176 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no">"
 
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
+		
+		<!-- Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Sen:wght@400..800&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			.jersey-15-regular {
+				font-family: "Jersey 15", sans-serif !important;
+				font-weight: 400;
+				font-style: normal;
+				}
+
+			p {
+				z-index: 6;
+			}
+			.medium {
+				font-size: .8em;
+			}
+			.small {
+				font-size: .4em;
+			}
+			.l {
+				text-align: left;
+			}
+			.bold {
+				font-weight: 600;
+			}
+			a.signup {
+				background-color: white; 
+				color: black; 
+				padding: 5px 10px; 
+				border-radius: 10px; 
+			}
+			a.signup:hover {
+				background-color: rgba(255, 255, 255, 0.85);
+				color: black;
+				cursor: pointer;
+			}
+			
+
+			@keyframes fadeInRed {
+				from {
+					background-color: transparent;
+				}
+				to {
+					background-color: rgba(0,0,0,0.75);
+				}
+			}
+			.overlay-div {
+				z-index : 1;
+				position : absolute;
+				top : 0;
+				left : 0;
+				width: 100%;
+				height: 100%;
+				animation: fadeInRed 3s forwards; /* Complete the animation in 3 seconds */
+			}
+
+			.two-columns {
+				display: flex; 
+				justify-content: space-between; 
+				max-width: 700px; 
+				margin: auto;
+			}
+			.two-columns > div {
+				max-width: 330px;
+			}
+
+			.large-only {
+				display: block;
+			}
+			.mobile-only {
+				display: none;
+			}
+
+			@media only screen and (max-width: 600px) {
+				.medium {
+					font-size: .8em;
+				}
+				.small {
+					font-size: .75em;
+				}
+
+				.two-columns {
+					flex-direction: column;
+				}
+				.two-columns > div {
+					max-width: 100%;
+				}
+			}
+			@media only screen and (max-width: 454px) {
+
+				.overlay-div {
+					z-index : 1;
+					position : fixed;
+				}
+				.slide-background, .slide-background-content {
+					padding: 10px auto;
+					background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95) ), url('./eeg_study_ad_0_bg_only.png') !important;
+					background-position: bottom !important;
+				}
+				img {
+					margin-top: 5px;
+					max-width: 25% !important; 
+				}
+				.large-only {
+					display: none;
+				}
+				.mobile-only {
+					display: block;
+				}
+			}
+		</style>
 	</head>
 	<body>
-		<div class="reveal">
+		<div class="reveal" style="padding: 0">
+			<div class="overlay-div"></div>
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-autoslide="1000" data-background-image="./eeg_study_ad_0_bg_only.png" data-auto-animate style="height: 100%;">
+					<p data-autoslide="200" class="fragment jersey-15-regular" style="margin-bottom: 0; padding-bottom: 0;">Participate in EEG Code Comprehension Study</p>
+					<div data-autoslide="1000" class="fragment" style="display: flex; justify-content: flex-start; max-width: 700px; margin: auto; margin-top: -25px;">
+						<img data-src="/hasel_logo.svg" style="max-width: 100px; margin-right: .5em;">
+						<img data-src="/uzh_logo.svg" style="max-width: 100px; margin-right: .5em;">
+					</div>
+					
+					<div class="two-columns">
+						<div data-autoslide="200" class="fragment">
+							<p class="jersey-15-regular medium l">Eligibility</p>
+							<p class="small l">You have at least basic Python coding experience equivalent to completing an Introduction to Python course. <br/><br/>You are at least 18 years old and in healthy condition.</p>
+						
+						</div>
+						<div data-autoslide="200" class="fragment">
+							<p class="jersey-15-regular medium l">Reward</p>
+							<p class="small l">Upon completion of the experiment you will receive a compensation of <b>30 CHF</b> (preferrably via Twint).<br/><br/> You will also receive a personal EEG data report containing visualizations of your brain activity during the experiment.</p>
+						
+						</div>
+					</div>
+					
+					<div data-autoslide="200" class="fragment" style="max-width: 700px; margin: auto;">
+						<p class="jersey-15-regular medium l">Sign Up</p>
+						<p class="small l" style="max-width: 700px; margin: auto;">The EEG lab is located at the Institute of Informatics UZH in Oerlikon (BIN). The experiment takes about 45-60 minutes (+ approx. 30 minutes setup/clean up time). Download our <a href="/eeg_study_consent_form.pdf">consent form</a> for further information. <a href="mailto:alakmeh@ifi.uzh.ch">Contact us</a> if you have any questions.<br/><br/></p>
+					</div>
+
+
+					<div class="fragment large-only" data-autoslide="0">
+						<!-- Calendly link widget begin -->
+						<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+						<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+						<a class="small signup" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tarek-alakmeh/eeg-study'});return false;">Schedule Participation Now</a>
+						<!-- Calendly link widget end -->
+					</div>
+
+					<div class="fragment mobile-only" data-autoslide="0">
+						<a class="small signup" href="https://calendly.com/tarek-alakmeh/eeg-study" target="_blank" rel="noopener noreferrer">Schedule Participation Now</a>
+					</div>
+				</section>
+
 			</div>
+			
+			
 		</div>
 
 		<script src="dist/reveal.js"></script>
@@ -31,7 +184,8 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				autoSlide: 1000,
+				controls: false,
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
